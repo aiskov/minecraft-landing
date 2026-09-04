@@ -188,7 +188,8 @@ main { position: relative; z-index: 10; }
   color: var(--text-soft);
 }
 
-.hero-lead > span {
+.hero-lead > span,
+.section-lead > span {
   padding: .18em .45em;
   background: #000000b3;
   box-decoration-break: clone;
@@ -266,11 +267,11 @@ main { position: relative; z-index: 10; }
 }
 
 .section-lead {
-  margin: 18px 0 0;
+  margin: 18px 0 0 -.45em;
   max-width: 58ch;
   font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-muted);
+  line-height: 1.9;
+  color: var(--text-soft);
 }
 
 /* ---------- panels ---------- */
