@@ -127,6 +127,23 @@ img, svg { display: block; max-width: 100%; }
 .nav-link--green:hover { border-color: #7be06b66; background: #7be06b14; }
 .nav-link--amber:hover { border-color: #f2b23c66; background: #f2b23c14; }
 
+.lang-switch { display: inline-flex; margin-left: 6px; border: 1px solid var(--hair); }
+
+.lang-btn {
+  padding: 9px 11px;
+  background: transparent;
+  border: 0;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  cursor: pointer;
+  transition: color .18s ease, background-color .18s ease;
+}
+.lang-btn + .lang-btn { border-left: 1px solid var(--hair); }
+.lang-btn:hover { color: var(--text); background: #ffffff0d; }
+.lang-btn.is-active { color: var(--green); background: #7be06b14; }
+
 /* ---------- layout ---------- */
 
 main { position: relative; z-index: 10; }

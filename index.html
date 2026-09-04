@@ -31,82 +31,86 @@
     <span class="brand-cube" aria-hidden="true"></span>
     <span class="brand-name">minecraft.aiskov.com</span>
   </a>
-  <nav class="nav" aria-label="Sections">
-    <a class="nav-link nav-link--green" href="#crossplay">Crossplay</a>
-    <a class="nav-link nav-link--amber" href="#modded">Modded</a>
-    <a class="nav-link" href="#faq">FAQ</a>
+  <nav class="nav" data-i18n-aria-label="nav.label" aria-label="Sections">
+    <a class="nav-link nav-link--green" href="#crossplay" data-i18n="nav.crossplay">Crossplay</a>
+    <a class="nav-link nav-link--amber" href="#modded" data-i18n="nav.modded">Modded</a>
+    <a class="nav-link" href="#faq" data-i18n="nav.faq">FAQ</a>
+    <span class="lang-switch" role="group" data-i18n-aria-label="nav.language" aria-label="Language">
+      <button class="lang-btn is-active" type="button" data-lang="en" lang="en">EN</button>
+      <button class="lang-btn" type="button" data-lang="pl" lang="pl">PL</button>
+    </span>
   </nav>
 </header>
 
 <main id="top">
 
   <section class="hero">
-    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>two servers, one hostname</p>
-    <h1 class="hero-title">Dig here.<br />Excuses<br />elsewhere.</h1>
-    <p class="hero-lead"><span>Two servers. The first is crossplay — join from any device, no mods, no fuss. The second is packed with mods and a whole new experience. Both live at one address: <span class="mono-bright">minecraft.aiskov.com</span>.</span></p>
+    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">two servers, one hostname</span></p>
+    <h1 class="hero-title" data-i18n="hero.title">Dig here.<br />Excuses<br />elsewhere.</h1>
+    <p class="hero-lead"><span data-i18n="hero.lead">Two servers. The first is crossplay — join from any device, no mods, no fuss. The second is packed with mods and a whole new experience. Both live at one address: <span class="mono-bright">minecraft.aiskov.com</span>.</span></p>
     <div class="hero-cta">
-      <a class="btn btn--green" href="#crossplay">Join the crossplay server</a>
-      <a class="btn btn--amber" href="#modded">Join the modded server</a>
+      <a class="btn btn--green" href="#crossplay" data-i18n="hero.ctaCrossplay">Join the crossplay server</a>
+      <a class="btn btn--amber" href="#modded" data-i18n="hero.ctaModded">Join the modded server</a>
     </div>
   </section>
 
   <section class="section reveal" id="crossplay">
     <div class="badges">
-      <span class="kicker kicker--green">SERVER 01</span>
-      <span class="badge badge--green">latest release</span>
-      <span class="badge badge--green">java + bedrock</span>
-      <span class="badge badge--green">no mods needed</span>
+      <span class="kicker kicker--green" data-i18n="cp.kicker">SERVER 01</span>
+      <span class="badge badge--green" data-i18n="cp.badgeVersion">latest release</span>
+      <span class="badge badge--green" data-i18n="cp.badgeEditions">java + bedrock</span>
+      <span class="badge badge--green" data-i18n="cp.badgeMods">no mods needed</span>
     </div>
-    <h2 class="h2">The crossplay one</h2>
-    <p class="section-lead"><span>Vanilla-ish survival on the newest release. Phone, console, laptop — everyone lands in the same world. Nothing to install, no launcher gymnastics.</span></p>
+    <h2 class="h2" data-i18n="cp.title">The crossplay one</h2>
+    <p class="section-lead"><span data-i18n="cp.lead">Vanilla-ish survival on the newest release. Phone, console, laptop — everyone lands in the same world. Nothing to install, no launcher gymnastics.</span></p>
 
     <div class="panel">
-      <div class="tabs" role="tablist" aria-label="Minecraft edition">
-        <button class="tab is-active" role="tab" id="tab-java" aria-controls="panel-java" aria-selected="true" data-tab="java" type="button"><span class="tab-dot" aria-hidden="true"></span>Java Edition</button>
-        <button class="tab" role="tab" id="tab-bedrock" aria-controls="panel-bedrock" aria-selected="false" data-tab="bedrock" type="button"><span class="tab-dot" aria-hidden="true"></span>Bedrock Edition</button>
+      <div class="tabs" role="tablist" data-i18n-aria-label="cp.tabsLabel" aria-label="Minecraft edition">
+        <button class="tab is-active" role="tab" id="tab-java" aria-controls="panel-java" aria-selected="true" data-tab="java" type="button"><span class="tab-dot" aria-hidden="true"></span><span data-i18n="cp.tabJava">Java Edition</span></button>
+        <button class="tab" role="tab" id="tab-bedrock" aria-controls="panel-bedrock" aria-selected="false" data-tab="bedrock" type="button"><span class="tab-dot" aria-hidden="true"></span><span data-i18n="cp.tabBedrock">Bedrock Edition</span></button>
       </div>
 
       <div class="grid-steps" id="panel-java" role="tabpanel" aria-labelledby="tab-java" data-panel="java">
         <ol class="steps">
-          <li class="step"><span class="step-num step-num--green">01</span><span class="step-body">Launch Minecraft: Java Edition on the <strong>latest release</strong> version. No mods, no Forge, no Fabric of any kind.</span></li>
-          <li class="step"><span class="step-num step-num--green">02</span><span class="step-body">Main menu → <strong>Multiplayer</strong> → <strong>Add Server</strong>.</span></li>
-          <li class="step"><span class="step-num step-num--green">03</span><span class="step-body">Server Name: anything. Server Address: <span class="mono-green">minecraft.aiskov.com</span> — the default port is already right, so leave it off.</span></li>
-          <li class="step"><span class="step-num step-num--green">04</span><span class="step-body">Done → double-click the server. See you at spawn.</span></li>
+          <li class="step"><span class="step-num step-num--green">01</span><span class="step-body" data-i18n="cp.java.step1">Launch Minecraft: Java Edition on the <strong>latest release</strong> version. No mods, no Forge, no Fabric of any kind.</span></li>
+          <li class="step"><span class="step-num step-num--green">02</span><span class="step-body" data-i18n="cp.java.step2">Main menu → <strong>Multiplayer</strong> → <strong>Add Server</strong>.</span></li>
+          <li class="step"><span class="step-num step-num--green">03</span><span class="step-body" data-i18n="cp.java.step3">Server Name: anything. Server Address: <span class="mono-green">minecraft.aiskov.com</span> — the default port is already right, so leave it off.</span></li>
+          <li class="step"><span class="step-num step-num--green">04</span><span class="step-body" data-i18n="cp.java.step4">Done → double-click the server. See you at spawn.</span></li>
         </ol>
         <div class="facts">
-          <p class="fact-label">server address</p>
+          <p class="fact-label" data-i18n="fact.address">server address</p>
           <div class="addr-row">
             <code class="addr">minecraft.aiskov.com</code>
-            <button class="copy-btn" type="button" data-copy="minecraft.aiskov.com"><span class="copy-idle">copy</span><span class="copy-done">copied ✓</span></button>
+            <button class="copy-btn" type="button" data-copy="minecraft.aiskov.com"><span class="copy-idle" data-i18n="copy.idle">copy</span><span class="copy-done" data-i18n="copy.done">copied ✓</span></button>
           </div>
           <div class="rule"></div>
-          <p class="fact-label">port</p>
-          <p class="fact-value">25565 <span class="fact-note">(default — nothing to type)</span></p>
+          <p class="fact-label" data-i18n="fact.port">port</p>
+          <p class="fact-value">25565 <span class="fact-note" data-i18n="cp.java.portNote">(default — nothing to type)</span></p>
           <div class="rule"></div>
-          <p class="fact-label">version</p>
-          <p class="fact-value">latest release</p>
+          <p class="fact-label" data-i18n="fact.version">version</p>
+          <p class="fact-value" data-i18n="cp.java.versionValue">latest release</p>
         </div>
       </div>
 
       <div class="grid-steps" id="panel-bedrock" role="tabpanel" aria-labelledby="tab-bedrock" data-panel="bedrock" hidden>
         <ol class="steps">
-          <li class="step"><span class="step-num step-num--green">01</span><span class="step-body">Open Minecraft on Windows, mobile, Switch, PlayStation or Xbox — anything that isn't Java Edition.</span></li>
-          <li class="step"><span class="step-num step-num--green">02</span><span class="step-body"><strong>Play</strong> → <strong>Servers</strong> tab → scroll to the bottom → <strong>Add Server</strong>.</span></li>
-          <li class="step"><span class="step-num step-num--green">03</span><span class="step-body">Name it whatever. Address <span class="mono-green">minecraft.aiskov.com</span>, Port <span class="mono-green">19132</span>. Save.</span></li>
-          <li class="step"><span class="step-num step-num--green">04</span><span class="step-body">Console players: if third-party servers are hidden on your platform, use the DNS trick or hop on from a phone — details in the <a href="#faq">FAQ</a>.</span></li>
+          <li class="step"><span class="step-num step-num--green">01</span><span class="step-body" data-i18n="cp.bedrock.step1">Open Minecraft on Windows, mobile, Switch, PlayStation or Xbox — anything that isn't Java Edition.</span></li>
+          <li class="step"><span class="step-num step-num--green">02</span><span class="step-body" data-i18n="cp.bedrock.step2"><strong>Play</strong> → <strong>Servers</strong> tab → scroll to the bottom → <strong>Add Server</strong>.</span></li>
+          <li class="step"><span class="step-num step-num--green">03</span><span class="step-body" data-i18n="cp.bedrock.step3">Name it whatever. Address <span class="mono-green">minecraft.aiskov.com</span>, Port <span class="mono-green">19132</span>. Save.</span></li>
+          <li class="step"><span class="step-num step-num--green">04</span><span class="step-body" data-i18n="cp.bedrock.step4">Console players: if third-party servers are hidden on your platform, use the DNS trick or hop on from a phone — details in the <a href="#faq">FAQ</a>.</span></li>
         </ol>
         <div class="facts">
-          <p class="fact-label">server address</p>
+          <p class="fact-label" data-i18n="fact.address">server address</p>
           <div class="addr-row">
             <code class="addr">minecraft.aiskov.com</code>
-            <button class="copy-btn" type="button" data-copy="minecraft.aiskov.com"><span class="copy-idle">copy</span><span class="copy-done">copied ✓</span></button>
+            <button class="copy-btn" type="button" data-copy="minecraft.aiskov.com"><span class="copy-idle" data-i18n="copy.idle">copy</span><span class="copy-done" data-i18n="copy.done">copied ✓</span></button>
           </div>
           <div class="rule"></div>
-          <p class="fact-label">port</p>
-          <p class="fact-value fact-value--bright">19132 <span class="fact-note">(type this one in)</span></p>
+          <p class="fact-label" data-i18n="fact.port">port</p>
+          <p class="fact-value fact-value--bright">19132 <span class="fact-note" data-i18n="cp.bedrock.portNote">(type this one in)</span></p>
           <div class="rule"></div>
-          <p class="fact-label">works on</p>
-          <p class="fact-value">windows · ios · android · consoles</p>
+          <p class="fact-label" data-i18n="cp.bedrock.worksOn">works on</p>
+          <p class="fact-value" data-i18n="cp.bedrock.worksOnValue">windows · ios · android · consoles</p>
         </div>
       </div>
     </div>
@@ -114,69 +118,69 @@
 
   <section class="section reveal" id="modded">
     <div class="badges">
-      <span class="kicker kicker--amber">SERVER 02</span>
+      <span class="kicker kicker--amber" data-i18n="md.kicker">SERVER 02</span>
       <span class="badge badge--amber">neoforge 1.21.1</span>
-      <span class="badge badge--amber">java only</span>
-      <span class="badge badge--amber">modpack required</span>
+      <span class="badge badge--amber" data-i18n="md.badgeJava">java only</span>
+      <span class="badge badge--amber" data-i18n="md.badgePack">modpack required</span>
     </div>
-    <h2 class="h2">The modded one</h2>
-    <p class="section-lead"><span>A CurseForge modpack, NeoForge 1.21.1, and a port that isn't the default because we like watching people forget it. Java Edition only — Bedrock cannot come to this party.</span></p>
+    <h2 class="h2" data-i18n="md.title">The modded one</h2>
+    <p class="section-lead"><span data-i18n="md.lead">A CurseForge modpack, NeoForge 1.21.1, and a port that isn't the default because we like watching people forget it. Java Edition only — Bedrock cannot come to this party.</span></p>
 
     <div class="panel panel--amber">
       <div class="grid-steps">
         <ol class="steps">
-          <li class="step"><span class="step-num step-num--amber">01</span><span class="step-body">Install the <strong>CurseForge app</strong> (or Prism / ATLauncher — anything that imports CurseForge packs).</span></li>
-          <li class="step"><span class="step-num step-num--amber">02</span><span class="step-body">Open our modpack on CurseForge, hit <strong>Install</strong>, and let it pull the whole pile of mods.
-            <a class="cf-link" href="https://www.curseforge.com/minecraft/share/W2S6dZbZ" target="_blank" rel="noopener" data-modpack-link>Modpack on CurseForge <span class="cf-link-note">↗</span></a>
+          <li class="step"><span class="step-num step-num--amber">01</span><span class="step-body" data-i18n="md.step1">Install the <strong>CurseForge app</strong> (or Prism / ATLauncher — anything that imports CurseForge packs).</span></li>
+          <li class="step"><span class="step-num step-num--amber">02</span><span class="step-body"><span data-i18n="md.step2">Open our modpack on CurseForge, hit <strong>Install</strong>, and let it pull the whole pile of mods.</span>
+            <a class="cf-link" href="https://www.curseforge.com/minecraft/share/W2S6dZbZ" target="_blank" rel="noopener" data-modpack-link><span data-i18n="md.cfLink">Modpack on CurseForge</span> <span class="cf-link-note">↗</span></a>
           </span></li>
-          <li class="step"><span class="step-num step-num--amber">03</span><span class="step-body">Play the instance → <strong>Multiplayer</strong> → <strong>Add Server</strong> → <span class="mono-amber">minecraft.aiskov.com:25566</span>. The <span class="mono-amber">:25566</span> is not optional.</span></li>
-          <li class="step"><span class="step-num step-num--amber">04</span><span class="step-body">First load takes a minute. Go make tea, come back a wizard.</span></li>
+          <li class="step"><span class="step-num step-num--amber">03</span><span class="step-body" data-i18n="md.step3">Play the instance → <strong>Multiplayer</strong> → <strong>Add Server</strong> → <span class="mono-amber">minecraft.aiskov.com:25566</span>. The <span class="mono-amber">:25566</span> is not optional.</span></li>
+          <li class="step"><span class="step-num step-num--amber">04</span><span class="step-body" data-i18n="md.step4">First load takes a minute. Go make tea, come back a wizard.</span></li>
         </ol>
         <div class="facts facts--amber">
-          <p class="fact-label">server address</p>
+          <p class="fact-label" data-i18n="fact.address">server address</p>
           <div class="addr-row">
             <code class="addr addr--amber">minecraft.aiskov.com:25566</code>
-            <button class="copy-btn copy-btn--amber" type="button" data-copy="minecraft.aiskov.com:25566"><span class="copy-idle">copy</span><span class="copy-done">copied ✓</span></button>
+            <button class="copy-btn copy-btn--amber" type="button" data-copy="minecraft.aiskov.com:25566"><span class="copy-idle" data-i18n="copy.idle">copy</span><span class="copy-done" data-i18n="copy.done">copied ✓</span></button>
           </div>
           <div class="rule rule--amber"></div>
-          <p class="fact-label">loader</p>
+          <p class="fact-label" data-i18n="md.loader">loader</p>
           <p class="fact-value">neoforge · 1.21.1</p>
           <div class="rule rule--amber"></div>
-          <p class="fact-label">modpack</p>
-          <p class="fact-value"><a href="https://www.curseforge.com/minecraft/share/W2S6dZbZ" target="_blank" rel="noopener">Open the pack on CurseForge ↗</a></p>
+          <p class="fact-label" data-i18n="md.modpack">modpack</p>
+          <p class="fact-value"><a href="https://www.curseforge.com/minecraft/share/W2S6dZbZ" target="_blank" rel="noopener" data-i18n="md.packLink">Open the pack on CurseForge ↗</a></p>
         </div>
       </div>
-      <p class="callout-warn"><span class="warn-dot" aria-hidden="true"></span>Joining without the exact pack gives you a red wall of missing-mod text, not a world. Same pack, same version, every time.</p>
+      <p class="callout-warn"><span class="warn-dot" aria-hidden="true"></span><span data-i18n="md.warn">Joining without the exact pack gives you a red wall of missing-mod text, not a world. Same pack, same version, every time.</span></p>
     </div>
   </section>
 
   <section class="section reveal" id="faq">
-    <p class="kicker kicker--muted">WHEN IT DOESN'T WORK</p>
-    <h2 class="h2">Troubleshooting &amp; FAQ</h2>
+    <p class="kicker kicker--muted" data-i18n="faq.kicker">WHEN IT DOESN'T WORK</p>
+    <h2 class="h2" data-i18n="faq.title">Troubleshooting &amp; FAQ</h2>
     <div class="faq-list">
       <details class="faq-item">
-        <summary class="faq-q"><span>Java or Bedrock — which one do I even have?</span><span class="faq-plus" aria-hidden="true">+</span></summary>
-        <p class="faq-a">If you bought it on a phone, console, or the Microsoft Store, it's Bedrock. If you launch it from the Minecraft Launcher and can install mods, it's Java. Both work on server 01 — just follow the matching tab.</p>
+        <summary class="faq-q"><span data-i18n="faq.q1">Java or Bedrock — which one do I even have?</span><span class="faq-plus" aria-hidden="true">+</span></summary>
+        <p class="faq-a" data-i18n="faq.a1">If you bought it on a phone, console, or the Microsoft Store, it's Bedrock. If you launch it from the Minecraft Launcher and can install mods, it's Java. Both work on server 01 — just follow the matching tab.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q"><span>Bedrock says it can't connect.</span><span class="faq-plus" aria-hidden="true">+</span></summary>
-        <p class="faq-a">Nine times out of ten the port is missing or wrong — it must be <span class="mono-bright">19132</span>, not 25565. Otherwise: fully restart the game (Bedrock caches failed servers), and make sure you're on the current version.</p>
+        <summary class="faq-q"><span data-i18n="faq.q2">Bedrock says it can't connect.</span><span class="faq-plus" aria-hidden="true">+</span></summary>
+        <p class="faq-a" data-i18n="faq.a2">Nine times out of ten the port is missing or wrong — it must be <span class="mono-bright">19132</span>, not 25565. Otherwise: fully restart the game (Bedrock caches failed servers), and make sure you're on the current version.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q"><span>Can I join the modded server on Bedrock, or on plain Java?</span><span class="faq-plus" aria-hidden="true">+</span></summary>
-        <p class="faq-a">No and no. Server 02 needs Java Edition running the exact CurseForge modpack on NeoForge 1.21.1. Vanilla Java gets rejected, Bedrock doesn't speak the protocol at all.</p>
+        <summary class="faq-q"><span data-i18n="faq.q3">Can I join the modded server on Bedrock, or on plain Java?</span><span class="faq-plus" aria-hidden="true">+</span></summary>
+        <p class="faq-a" data-i18n="faq.a3">No and no. Server 02 needs Java Edition running the exact CurseForge modpack on NeoForge 1.21.1. Vanilla Java gets rejected, Bedrock doesn't speak the protocol at all.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q"><span>"Outdated server" / "Outdated client" on server 01.</span><span class="faq-plus" aria-hidden="true">+</span></summary>
-        <p class="faq-a">Server 01 tracks the latest release. Set your launcher profile back to "Latest release" and relaunch. If a brand-new version just dropped, give us a few days to catch up.</p>
+        <summary class="faq-q"><span data-i18n="faq.q4">"Outdated server" / "Outdated client" on server 01.</span><span class="faq-plus" aria-hidden="true">+</span></summary>
+        <p class="faq-a" data-i18n="faq.a4">Server 01 tracks the latest release. Set your launcher profile back to "Latest release" and relaunch. If a brand-new version just dropped, give us a few days to catch up.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q"><span>The modded pack crashes or runs like a slideshow.</span><span class="faq-plus" aria-hidden="true">+</span></summary>
-        <p class="faq-a">Raise the instance's RAM to 6–8 GB (more than 10 GB actually makes it worse), update your GPU drivers, and let the pack finish its first-load shader and model baking before judging the frame rate.</p>
+        <summary class="faq-q"><span data-i18n="faq.q5">The modded pack crashes or runs like a slideshow.</span><span class="faq-plus" aria-hidden="true">+</span></summary>
+        <p class="faq-a" data-i18n="faq.a5">Raise the instance's RAM to 6–8 GB (more than 10 GB actually makes it worse), update your GPU drivers, and let the pack finish its first-load shader and model baking before judging the frame rate.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q"><span>Can I bring a friend?</span><span class="faq-plus" aria-hidden="true">+</span></summary>
-        <p class="faq-a">Small community, so: yes, if you vouch for them. Ask before you hand out the address and everyone stays happy.</p>
+        <summary class="faq-q"><span data-i18n="faq.q6">Can I bring a friend?</span><span class="faq-plus" aria-hidden="true">+</span></summary>
+        <p class="faq-a" data-i18n="faq.a6">Small community, so: yes, if you vouch for them. Ask before you hand out the address and everyone stays happy.</p>
       </details>
     </div>
   </section>
@@ -187,15 +191,16 @@
         <span class="brand-cube brand-cube--sm" aria-hidden="true"></span>
         <span class="brand-name">minecraft.aiskov.com</span>
       </div>
-      <p class="footer-note">Two servers, one hostname, zero microtransactions.</p>
+      <p class="footer-note" data-i18n="footer.note">Two servers, one hostname, zero microtransactions.</p>
     </div>
     <div class="footer-tags">
-      <span class="tag">01 · crossplay · default port</span>
-      <span class="tag">02 · modded · :25566</span>
+      <span class="tag" data-i18n="footer.tag1">01 · crossplay · default port</span>
+      <span class="tag" data-i18n="footer.tag2">02 · modded · :25566</span>
     </div>
   </footer>
 </main>
 
+<script src="i18n.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>
