@@ -25,6 +25,7 @@
   --font-pixel: 'Silkscreen', 'IBM Plex Mono', monospace;
   --wrap: 1180px;
   --pad-x: 28px;
+  --header-h: 58px; /* fallback = desktop height; app.js measures the real one */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -115,6 +116,7 @@ img, svg { display: block; max-width: 100%; }
 
 .nav-link {
   font-family: var(--font-mono);
+  white-space: nowrap;
   font-size: 12px;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -156,7 +158,7 @@ main { position: relative; z-index: 10; }
   justify-content: center;
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 120px var(--pad-x) 80px;
+  padding: calc(var(--header-h) + 46px) var(--pad-x) 80px;
 }
 
 .section {
@@ -540,7 +542,7 @@ main { position: relative; z-index: 10; }
 @media (max-width: 640px) {
   :root { --pad-x: 18px; }
   .site-header { flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: 14px; }
-  .hero { padding-top: 170px; }
+  .hero { padding-top: calc(var(--header-h) + 40px); }
   .steps { padding: 26px 22px 30px; }
   .facts { padding: 26px 22px; }
   .callout-warn { padding: 16px 22px; align-items: flex-start; }
@@ -548,6 +550,50 @@ main { position: relative; z-index: 10; }
   .tab { flex: 1 1 auto; justify-content: center; padding: 14px 16px; }
   .footer { padding-bottom: 50px; }
 }
+
+/* short viewports — phones held sideways, small desktop windows.
+   Width breakpoints alone miss these: 844x390 is wider than a phone
+   but only half as tall, so vertical rhythm is what has to shrink. */
+@media (max-height: 560px) and (orientation: landscape) {
+  /* the header stays a single row even under 640px — a stacked or wrapped
+     header eats a third of a 320px-tall viewport */
+  .site-header { flex-direction: row; align-items: center; gap: 12px; padding: 10px var(--pad-x); }
+  .nav { flex-wrap: nowrap; }
+  .nav-link, .lang-btn { padding: 7px 9px; font-size: 11px; }
+  .brand-cube { width: 18px; height: 18px; box-shadow: 3px 3px 0 var(--green-deep), -5px 0 0 #1c2a1e; }
+  .brand-name { font-size: 11px; }
+
+  .hero {
+    min-height: 0;
+    padding: calc(var(--header-h) + 18px) var(--pad-x) 44px;
+  }
+  .eyebrow { margin-bottom: 12px; }
+  .hero-title { font-size: clamp(30px, 10vh, 56px); }
+  .hero-lead {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .hero-cta { margin-top: 16px; gap: 10px; }
+  .btn { padding: 12px 18px; font-size: 14px; }
+
+  .section { padding: 54px var(--pad-x); }
+  .h2 { font-size: clamp(28px, 9vh, 44px); }
+  .section-lead { margin-top: 12px; font-size: 15px; line-height: 1.75; }
+
+  .steps { padding: 22px 22px 26px; }
+  .facts { padding: 22px; }
+  .footer { padding-bottom: 40px; }
+}
+
+/* narrow landscape (small phones sideways): the wordmark alone is wider than
+   the room left for the nav, so the cube carries the brand */
+@media (max-height: 560px) and (max-width: 620px) and (orientation: landscape) {
+  .site-header .brand-name { display: none; }
+}
+
+/* fixed header would otherwise cover the heading an anchor jumps to */
+.hero, .section { scroll-margin-top: calc(var(--header-h) + 12px); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

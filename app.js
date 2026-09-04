@@ -1,8 +1,9 @@
 /* minecraft.aiskov.com — landing page behaviour
-   1. edition tabs
-   2. copy-to-clipboard
-   3. reveal on scroll
-   4. voxel island background scene
+   1. header height → --header-h
+   2. edition tabs
+   3. copy-to-clipboard
+   4. reveal on scroll
+   5. voxel island background scene
    Scene options live on <canvas id="scene">:
      data-motion="cinematic|calm|off"  data-detail="4..12"  data-palette="overworld|dusk|nether"
 */
@@ -11,7 +12,30 @@
 
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- 1. tabs ---------- */
+  /* ---------- 1. header height ----------
+     The header is fixed, so the hero has to reserve room for it. Its height
+     changes with viewport width (the nav wraps) and with language, so it is
+     measured instead of hard-coded. */
+
+  var header = document.querySelector('.site-header');
+
+  if (header) {
+    var syncHeaderHeight = function () {
+      var h = Math.round(header.getBoundingClientRect().height);
+      if (h) document.documentElement.style.setProperty('--header-h', h + 'px');
+    };
+
+    syncHeaderHeight();
+
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(syncHeaderHeight).observe(header);
+    } else {
+      window.addEventListener('resize', syncHeaderHeight);
+      window.addEventListener('orientationchange', syncHeaderHeight);
+    }
+  }
+
+  /* ---------- 2. tabs ---------- */
 
   var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab[data-tab]'));
   var panels = Array.prototype.slice.call(document.querySelectorAll('[data-panel]'));
@@ -31,7 +55,7 @@
     t.addEventListener('click', function () { selectTab(t.getAttribute('data-tab')); });
   });
 
-  /* ---------- 2. copy buttons ---------- */
+  /* ---------- 3. copy buttons ---------- */
 
   function legacyCopy(text) {
     var ta = document.createElement('textarea');
@@ -63,7 +87,7 @@
     });
   });
 
-  /* ---------- 3. reveal on scroll ---------- */
+  /* ---------- 4. reveal on scroll ---------- */
 
   var revealNodes = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   function showAll() { revealNodes.forEach(function (n) { n.classList.add('is-visible'); }); }
@@ -82,7 +106,7 @@
     setTimeout(showAll, 3500);
   }
 
-  /* ---------- 4. voxel scene ---------- */
+  /* ---------- 5. voxel scene ---------- */
 
   var canvas = document.getElementById('scene');
   if (!canvas || !canvas.getContext) return;
